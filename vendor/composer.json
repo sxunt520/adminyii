@@ -1,0 +1,6 @@
+{
+    "require": {
+        "yidashi/yii2-webuploader": "*",
+		"kartik-v/yii2-widget-fileinput": "@dev",
+    }
+}

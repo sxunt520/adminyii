@@ -1,0 +1,46 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "192fd183031ccb65ed86cf8075db1fc0",
+    "content-hash": "125b975057615cef2f1cc4e3c6bfc136",
+    "packages": [
+        {
+            "name": "yidashi/yii2-webuploader",
+            "version": "v1.4.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yidashi/yii2-webuploader.git",
+                "reference": "196a7bfe3c1a28af08f86f128bbb4c39e4a7f14f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/yidashi/yii2-webuploader/zipball/196a7bfe3c1a28af08f86f128bbb4c39e4a7f14f",
+                "reference": "196a7bfe3c1a28af08f86f128bbb4c39e4a7f14f",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "yidashi\\webuploader\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "description": "yii2-webuploader",
+            "time": "2016-07-14 11:02:43"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}

@@ -1,0 +1,59 @@
+{
+  "name" : "sxunt3.0",
+  "description" : "yii2内容管理框架",
+  "require" : {
+    "php" : ">=5.4.0",
+    "yiisoft/yii2" : ">=2.0.6",
+    "yiisoft/yii2-bootstrap" : "*",
+    "yiisoft/yii2-swiftmailer" : "*",
+    "kartik-v/yii2-widget-datetimepicker" : "^1.4",
+    "kartik-v/yii2-grid" : "*",
+    "kartik-v/yii2-detail-view" : "*",
+    "kartik-v/yii2-mpdf" : "*",
+    "kartik-v/yii2-widget-datepicker" : "^1.3",
+    "chrisboulton/php-resque" : "*",
+    "fabpot/goutte" : "^3.1",
+    "kucha/ueditor" : "*",
+    "yiisoft/yii2-authclient" : "^2.0",
+    "aferrandini/PHPQRCode" : "1.0.1",
+    "yiisoft/yii2-redis" : "*",
+    "mobiledetect/mobiledetectlib" : "^2.8",
+    "yiisoft/yii2-sphinx" : "^2.0",
+    "yidashi/yii2-webuploader" : "*",
+    "dmstr/yii2-adminlte-asset" : "*",
+    "yiisoft/yii2-composer" : "2.0.4",
+    "yidashi/yii2-bootstrap-markdown" : "^1.0",
+    "mihaildev/yii2-elfinder" : "^1.0",
+    "trntv/yii2-datetime-widget" : "^1.0.0",
+    "qiniu/php-sdk" : "^7.0",
+    "kartik-v/yii2-widget-fileinput": "@dev",
+  },
+  "require-dev" : {
+    "yiisoft/yii2-codeception" : "*",
+    "yiisoft/yii2-debug" : "*",
+    "yiisoft/yii2-gii" : "*",
+    "yiisoft/yii2-faker" : "*",
+	"yiisoft/yii2-jui": "*",
+  },
+  "support" : {
+    "issues" : "https://github.com/yiisoft/yii2/issues?state=open",
+    "forum" : "http://www.yiiframework.com/forum/",
+    "wiki" : "http://www.yiiframework.com/wiki/",
+    "irc" : "irc://irc.freenode.net/yii",
+    "source" : "https://github.com/yiisoft/yii2"
+  },
+  "keywords" : [ "yii2", "cmf" ],
+  "minimum-stability" : "stable",
+  "extra" : {
+    "asset-installer-paths" : {
+      "npm-asset-library" : "vendor/npm",
+      "bower-asset-library" : "vendor/bower"
+    }
+  },
+  "config" : {
+    "process-timeout" : 1800
+  },
+  "license" : "BSD-3-Clause",
+  "type" : "project",
+  "homepage" : "http://www.51siyuan.cn/"
+}
