@@ -159,6 +159,92 @@ class SiteController extends Controller
         return $this->render('about');
     }
 
+
+    //ffmpeg视频封面截图test
+    public function actionTestVideo()
+    {
+        
+            //代码
+            $savePath=Yii::getAlias('@staticroot').'/uploads/';
+            //var_dump(__METHOD__);
+            $path='D:\NEXT\test\xxxx.mp4';
+            $ffmpeg = \FFMpeg\FFMpeg::create([
+                //绑定插件
+                'ffmpeg.binaries'  => 'D:\down\ffmpeg-N-99973-g0066bf4d1a-win64-gpl-shared-vulkan\bin\ffmpeg.exe',
+                'ffprobe.binaries' => 'D:\down\ffmpeg-N-99973-g0066bf4d1a-win64-gpl-shared-vulkan\bin/ffprobe.exe'
+            ]);
+            $video = $ffmpeg->open($path);
+            $video
+                ->filters()
+                ->resize(new \FFMpeg\Coordinate\Dimension(100, 100))
+                ->synchronize();
+
+            //随机获取0到10帧中的某一帧图片
+            $rand=rand(0,10);
+            //$rand=1;
+            var_dump($rand);
+            $video
+                ->frame(\FFMpeg\Coordinate\TimeCode::fromSeconds($rand))
+                ->save($savePath.$rand.'_'.uniqid().'frame.jpg');
+    }
+
+    //ffmpeg视频封面截图test2
+    public function actionTestVideo2()
+    {
+            $savePath=Yii::getAlias('@staticroot').'/uploads/';
+
+            $ffmpeg = \FFMpeg\FFMpeg::create(
+                    [
+                        //绑定插件
+                        'ffmpeg.binaries'  => 'D:\down\ffmpeg-N-99973-g0066bf4d1a-win64-gpl-shared-vulkan\bin\ffmpeg.exe',
+                        'ffprobe.binaries' => 'D:\down\ffmpeg-N-99973-g0066bf4d1a-win64-gpl-shared-vulkan\bin/ffprobe.exe'
+                    ]
+                );
+            $video = $ffmpeg->open('D:\NEXT\test\xxxx.mp4');
+            $video
+                ->filters()
+                ->resize(new \FFMpeg\Coordinate\Dimension(320, 240))
+                ->synchronize();
+            $video
+                ->frame(\FFMpeg\Coordinate\TimeCode::fromSeconds(1))
+                ->save($savePath.'xxx'.'_'.uniqid().'.jpg');
+            // $video
+            //     ->save(new \FFMpeg\Format\Video\X264(), 'export-x264.mp4')
+            //     ->save(new \FFMpeg\Format\Video\WMV(), 'export-wmv.wmv')
+            //     ->save(new \FFMpeg\Format\Video\WebM(), 'export-webm.webm');
+    }
+
+    //ffmpe生成视频第一秒为封面截图
+    public function actionVideoCover()
+    {
+            $savePath=Yii::getAlias('@staticroot').'/uploads/';
+            $fileName='videoimg_'.uniqid().'.jpg';
+
+            $ffmpeg = \FFMpeg\FFMpeg::create(
+                    [
+                        //绑定插件
+                        'ffmpeg.binaries'  => 'D:\down\ffmpeg-N-99973-g0066bf4d1a-win64-gpl-shared-vulkan\bin\ffmpeg.exe',
+                        'ffprobe.binaries' => 'D:\down\ffmpeg-N-99973-g0066bf4d1a-win64-gpl-shared-vulkan\bin/ffprobe.exe'
+                    ]
+                );
+            $video = $ffmpeg->open('D:\NEXT\test\xxxx.mp4');
+            $video
+                ->filters()
+                ->resize(new \FFMpeg\Coordinate\Dimension(720, 1280))
+                ->synchronize();
+            $r=$video
+                ->frame(\FFMpeg\Coordinate\TimeCode::fromSeconds(1))
+                ->save($savePath.$fileName);
+
+            if($r){
+                echo $savePath.$fileName;
+            }else{
+                echo '生成失败';
+            }
+    }
+
+
+
     /**
      * Signs user up.
      *
